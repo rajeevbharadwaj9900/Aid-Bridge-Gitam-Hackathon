@@ -1,0 +1,401 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #000000; /* Black background for the body */
+  color: #fff; /* White text color */
+}
+
+header {
+  background: #000000; /* Black background for header */
+  color: #8BC34A; /* Green text color for header */
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  height: 100px; /* Increase the height to make the logo bigger */
+}
+
+header .quote {
+  flex: 1;
+  text-align: right;
+  padding-right: 100px;
+  font-size: large;
+  font-style: italic;
+  color: #8BC34A; /* Green text color for the quote */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #8BC34A; /* Green text color for links in header */
+  text-decoration: none;
+}
+
+.hero {
+  background: url('banner.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #000000; /* Black background for sections */
+}
+
+section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #8BC34A; /* Green text color */
+}
+
+.featured-requests .request-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.featured-requests .card {
+  background: #333; /* Dark background for cards */
+  border: 1px solid #8BC34A; /* Green border for cards */
+  padding: 20px;
+  margin: 10px;
+  width: calc(33.333% - 20px);
+  color: #fff; /* White text color for cards */
+}
+
+.featured-requests .card img {
+  width: 100%;
+  height: auto;
+}
+
+.submit-request form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-request form input,
+.submit-request form select,
+.submit-request form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #8BC34A; /* Green border for input fields */
+  border-radius: 5px;
+  background-color: #333; /* Dark background for input fields */
+  color: #fff; /* White text color for input fields */
+}
+
+.submit-request form button {
+  padding: 10px;
+  background: #8BC34A; /* Green background for button */
+  color: #000; /* Black text color for button */
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-request form label {
+  margin-top: 20px;
+}
+
+.testimonials .testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.testimonials .card {
+  background: #333; /* Dark background for testimonial cards */
+  border: 1px solid #8BC34A; /* Green border for testimonial cards */
+  padding: 20px;
+  margin: 10px;
+  width: calc(33.333% - 20px);
+  color: #fff; /* White text color for testimonial cards */
+}
+
+footer {
+  background: #333; /* Dark background for footer */
+  color: #8BC34A; /* Green text color for footer */
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer .quick-links,
+footer .social-media,
+footer .contact-info {
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #8BC34A;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a img {
+  height: 20px;
+  width: 20px;
+}
+
+.progress-container {
+  width: 80%;
+  background-color: #ddd;
+  border-radius: 25px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 30px;
+  background-color: #4caf50;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.details-button {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.details-button:hover {
+  background-color: #45a049;
+}
+
+.additional-questions form {
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-questions form textarea,
+.additional-questions form input,
+.additional-questions form select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #8BC34A; /* Green border for input fields */
+  border-radius: 5px;
+  background-color: #333; /* Dark background for input fields */
+  color: #fff; /* White text color for input fields */
+}
+
+.additional-questions form button {
+  padding: 10px;
+  background: #8BC34A; /* Green background for button */
+  color: #000; /* Black text color for button */
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.additional-questions form label {
+  margin-top: 20px;
+}
+
+.logo img {
+  max-width: 100px;
+  margin: 20px;
+}
+
+.quote {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+footer .quick-links a,
+footer .social-media a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+footer .social-media img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+footer .contact-info p {
+  margin: 5px 0;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text color */
+  border-radius: 10px;
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: scroll;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.message {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.message .sender {
+  font-weight: bold;
+  color: #8BC34A; /* Green text for sender */
+}
+
+.message .text {
+  margin-left: 10px;
+}
+
+.message .timestamp {
+  font-size: 0.8em;
+  color: #999;
+  margin-left: 10px;
+}
+
+.message.user-message {
+  justify-content: flex-end;
+}
+
+.message.user-message .text {
+  background-color: #8BC34A; /* Green background for user messages */
+  color: #000;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.message.user-message .sender {
+  order: 2;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 20px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #8BC34A; /* Green border */
+  background-color: #444;
+  color: #fff;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8BC34A; /* Green background */
+  color: #000;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Additional styles from code 1 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #8BC34A; /* Green border */
+  color: #fff; /* White text color */
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #333; /* Dark background for header */
+}
+
+tr:nth-child(even) {
+  background-color: #222; /* Darker background for even rows */
+}
+
+.status-verified {
+  color: #8BC34A; /* Green text for verified status */
+}
+
+.status-pending {
+  color: #ff9800; /* Orange text for pending status */
+}
+
+.aid-link {
+  color: #8BC34A; /* Green text for links */
+  cursor: pointer;
+}

@@ -1,0 +1,141 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #2e2f2e, #1b1d1b);
+    color: #d4d7d1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+header {
+    width: 100%;
+    background-color: #9acd32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header .logo img {
+    height: 100px; /* Increased size */
+    margin-right: 10px;
+}
+header .logo h1 {
+    font-size: 2.5em; /* Larger font size */
+    margin: 0;
+}
+header nav {
+    display: flex;
+    align-items: center;
+}
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li {
+    margin-left: 15px; /* Reduced margin for smaller navbar */
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #2e2f2e;
+    font-weight: 500;
+}
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+h1 {
+    color: #9acd32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+.question {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #9acd32;
+}
+.answer {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 10px;
+}
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.carousel img, .carousel video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.button {
+    padding: 15px 30px;
+    color: white;
+    background-color: #9acd32;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto;
+}
+.button:hover {
+    background-color: #86b42b;
+    transform: scale(1.05);
+}
+.reject-button {
+    background-color: #dc3545;
+}
+.reject-button:hover {
+    background-color: #c82333;
+}
+.datetime-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.datetime-input {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #9acd32;
+    background-color: #444;
+    color: #d4d7d1;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.datetime-input:focus {
+    border-color: #86b42b;
+    box-shadow: 0 0 5
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Water Donation Aid Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="admin_verify_good.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\saket\OneDrive\career\hack3\Admin\aidbridge logo.jpg" alt="AidBridge Logo">
+            <h1>AidBridge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Clean Water Donation Aid Details</h1>
+        <div class="question">Describe the resources needed for clean water donations in the community:</div>
+        <div class="answer">For clean water donation initiatives in our community, we require water purification systems, water filtration units, water storage containers, and transportation facilities to deliver clean water to remote areas. Additionally, we need trained personnel to manage water purification processes and educate the community about proper hygiene practices.</div>
+
+        <div class="question">Describe the statistics about clean water access in our community:</div>
+        <div class="answer">In our community, approximately 30% of households lack access to clean and safe drinking water. This lack of access leads to waterborne diseases, including cholera, typhoid fever, and diarrhea, affecting vulnerable populations such as children and the elderly. Access to clean water is essential for promoting public health, preventing diseases, and improving overall quality of life.</div>
+
+        <div class="images-container">
+            <div class="carousel">
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (3).jpeg" alt="Before Aid"></div>
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (4).jpeg" alt="Before Aid"></div>
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (5).jpeg" alt="Before Aid"></div>
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (6).jpeg" alt="Before Aid"></div>
+                <div><video controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video></div>
+            </div>
+        </div>
+
+        <div class="datetime-container">
+            <input type="date" class="datetime-input" id="meeting-date" required>
+            <input type="time" class="datetime-input" id="meeting-time" required>
+        </div>
+
+        <button class="button" onclick="sendEmail()">Send Email to Seeker</button>
+        <button class="button reject-button" onclick="rejectApplication()">Reject Application</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev">&lt;</button>',
+                nextArrow: '<button type="button" class="slick-next">&gt;</button>'
+            });
+        });
+
+        function sendEmail() {
+            const date = document.getElementById("meeting-date").value;
+            const time = document.getElementById("meeting-time").value;
+            const seekerEmail = "example@example.com"; // Assume seeker's email is known
+
+            const zoomLink = `https://zoom.us/meeting?id=123456789&date=${date}&time=${time}`;
+            alert(`Email sent to ${seekerEmail} with Zoom meeting link: ${zoomLink}`);
+        }
+
+        function rejectApplication() {
+            const aidName = "Clean Water Donation Aid"; // Change this to dynamically get the aid name if needed
+            // Store the rejected aid name in local storage
+            localStorage.setItem('rejectedApplication', JSON.stringify({ name: aidName, status: 'rejected' }));
+            alert(`Application for ${aidName} has been rejected.`);
+            // Redirect back to admin dashboard
+            window.location.href = '/admin_dashboard';
+        }
+    </script>
+</body>
+</html>

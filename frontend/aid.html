@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Statistics | Aid Bridge</title>
+  <link rel="stylesheet" href="seekers.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Aid-help.jpg" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpers.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="donor-statistics">
+    <h2>Helpers Statistics</h2> Have a glimpse of all the donations you recieved for your different aids<br> 
+    <button onclick="generatePDF()">Generate PDF</button>
+    <table id="donationsTable">
+      <thead>
+        <tr>
+          <th>Donor ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example Data Rows -->
+        <tr>
+          <td>Aid #1</td>
+          <td>John Doe</td>
+          <td class="status-verified">Verified</td>
+          <td><a href="chat.html?aid=1" class="aid-link">$1000</a></td>
+        </tr>
+        <tr>
+          <td>Aid #2</td>
+          <td>Jane Smith</td>
+          <td class="status-pending">Pending</td>
+          <td><a href="chat.html?aid=2" class="aid-link">$500</a></td>
+        </tr>
+        <tr>
+          <td>Aid #3</td>
+          <td>Michael Brown</td>
+          <td class="status-verified">Verified</td>
+          <td><a href="chat.html?aid=3" class="aid-link">$1500</a></td>
+        </tr>
+        <tr>
+          <td>Aid #4</td>
+          <td>Emily Davis</td>
+          <td class="status-pending">Pending</td>
+          <td><a href="chat.html?aid=4" class="aid-link">$200</a></td>
+        </tr>
+        <tr>
+          <td>Aid #5</td>
+          <td>Chris Johnson</td>
+          <td class="status-verified">Verified</td>
+          <td><a href="chat.html?aid=5" class="aid-link">$750</a></td>
+        </tr>
+        <tr>
+          <td>Aid #6</td>
+          <td>Patricia Williams</td>
+          <td class="status-pending">Pending</td>
+          <td><a href="chat.html?aid=6" class="aid-link">$900</a></td>
+        </tr>
+        <tr>
+          <td>Aid #7</td>
+          <td>James Taylor</td>
+          <td class="status-verified">Verified</td>
+          <td><a href="chat.html?aid=7" class="aid-link">$1200</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+  <script>
+    function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      doc.autoTable({
+        html: '#donationsTable',
+        theme: 'grid',
+        styles: { fillColor: [139, 195, 74] },
+        headStyles: { fillColor: [51, 51, 51] }
+      });
+      
+      doc.save('Donor_Statistics.pdf');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundraiser Details | Aid Bridge</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="helpland.css">
+  <style>
+    .fundraiser-detail {
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin-bottom: 20px;
+    }
+
+    .video-container img, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fundraiser-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress {
+      margin-bottom: 10px;
+    }
+
+    .btn-block {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .recent-donors {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+
+    .donor-name {
+      font-weight: bold;
+    }
+
+    .donate-via {
+      margin-top: 30px;
+    }
+
+    .donate-via .btn {
+      margin: 5px 0;
+    }
+
+    .story {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .story h3 {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Aid Help - Copy.png" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpland.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="fundraiser-detail container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 id="fund-title"></h1>
+        <p id="fund-campaign"></p>
+        <div class="video-container">
+          <img id="fund-image" src="" alt="Fundraiser Image" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fundraiser-info">
+          <h2>₹44,38,581</h2>
+          <p>Raised of ₹50L goal</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p>3715 Supporters</p>
+          <p>4 Days Left</p>
+          <button class="btn btn-danger btn-block">Give Now</button>
+          <button class="btn btn-secondary btn-block" onclick="window.location.href='helpchat.html'">Chat with the fundraiser</button>
+          <p class="mt-2">1667 shares! Every share counts.</p>
+          <div class="recent-donors">
+            <p><strong>66 people donated just now</strong></p>
+            <p><span class="donor-name">Anonymous</span> ₹1,200 <span class="badge badge-secondary">RECENT DONOR</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row donate-via">
+      <div class="col-md-12">
+        <h3>Donate Via</h3>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-light btn-lg">Google Pay, Paytm and others</button>
+          <button class="btn btn-light btn-lg">Credit & Debit Cards</button>
+          <button class="btn btn-light btn-lg">Internet Banking & Transfer</button>
+        </div>
+      </div>
+    </div>
+    <div class="row story">
+      <div class="col-md-12">
+        <h3>Story</h3>
+        <p>“I saw a girl, barely 7 or 8, being pushed into flesh trade. Her cries for help still echo in my ears. There were men as old as 60 r*ping the innocent child. That was the day I knew my mission in life was to get these children out of the hell-like conditions in red-light areas. They are nothing short of hell and no child deserves to grow up in this environment” says Vinay Vasta, founder of Social Activities Integration, an organisation committed to freeing children trapped in red-light areas.
+
+          Vinay and his NGO have been able to provide education, medical care and nutrition to over 2,500 children. But his dream to provide safe shelter to children remains unrealized. “We do our best to keep these children safe during the day but sadly they are forced to go back to the red light areas at night as we don’t have a home for them. Your donation can help us build a safe home for children of sex workers and prevent them from being pulled into prostitution. Donate to make this dream a reality
+          
+          Donate easily through UPI, all debit/credit cards and net banking. 
+          
+          Charitable donations to this fundraising campaign are tax exempted under 80G of the Income Tax Act (India).
+          
+          Life in red light areas
+          
+          “S*x workers use their homes which are barely 6 feet by 4 feet for their business. They invite customers in the presence of their children. Their children not only witness abuse but experience it too. Just imagine a child being told that all she can ever become in life is a pr*stitute”, Vinay shares as he explains the extent of abuse children face in red light areas.
+          
+          This is a life that thousands of children are forced to live behind closed doors where they suffer abuse and exploitation morning, noon and night.
+          
+          A ray of hope
+          
+          Vinay has been relentlessly trying to give children the care and education they deserve. He has provided quality English education to thousands of children, enabling them to secure a livelihood out of red-light areas. Several children taught by Vinay are today leading successful lives as professionals and Government employees. 
+          
+          However the sad reality is that Vinay and his NGO, in the absence of a permanent shelter home, are unable to provide round the clock safety to these children, which is essential for their well-being.
+          
+          Your donations can enable SAI to build a shelter home for the children of sex workers and usher in a new tomorrow for them, away from the horrors of red-light areas.
+          
+          Donate to this fundraiser on Give.do, India’s largest and most trusted online donation platform, to provide safe shelter for children of sex workers and save them from abuse and second generation pr*stitution.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = new URLSearchParams(window.location.search);
+      const title = params.get('title');
+      const image = params.get('image');
+      const campaign = params.get('campaign');
+
+      document.getElementById('fund-title').textContent = title;
+      document.getElementById('fund-image').src = image;
+      document.getElementById('fund-campaign').textContent = campaign;
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundraiser Status | Aid Bridge</title>
+  <link rel="stylesheet" href="seekers.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Aid-help.jpg" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpers.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="fundraiser-status">
+    <h2>Fundraiser Status</h2>
+    <!-- Fundraiser 1 -->
+    <div class="fundraiser">
+      <h3>1. AID for Education</h3>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar-1"></div>
+      </div>
+      <p>Total Needed: $<span id="target-amount-1"></span></p>
+      <p>Amount Collected: $<span id="collected-amount-1"></span></p>
+      <a href="aid.html?id=1" class="details-button">Details</a>
+    </div>
+
+    <!-- Fundraiser 2 -->
+    <div class="fundraiser">
+      <h3>2. AID for Healthcare</h3>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar-2"></div>
+      </div>
+      <p>Total Needed: $<span id="target-amount-2"></span></p>
+      <p>Amount Collected: $<span id="collected-amount-2"></span></p>
+      <a href="aid.html?id=2" class="details-button">Details</a>
+    </div>
+
+    <!-- Fundraiser 3 -->
+    <div class="fundraiser">
+      <h3>3. AID for Environment</h3>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar-3"></div>
+      </div>
+      <p>Total Needed: $<span id="target-amount-3"></span></p>
+      <p>Amount Collected: $<span id="collected-amount-3"></span></p>
+      <a href="aid.html?id=3" class="details-button">Details</a>
+    </div>
+
+    <!-- Fundraiser 4 -->
+    <div class="fundraiser">
+      <h3>4. AID for Social Good</h3>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar-4"></div>
+      </div>
+      <p>Total Needed: $<span id="target-amount-4"></span></p>
+      <p>Amount Collected: $<span id="collected-amount-4"></span></p>
+      <a href="aid.html?id=4" class="details-button">Details</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // Example JavaScript to dynamically update the progress bars
+    // In a real application, this value should be fetched from the backend
+    const fundraiserData = {
+      1: { name: "AI for Education", target: 10000, collected: 7500 },
+      2: { name: "AI for Healthcare", target: 15000, collected: 6000 },
+      3: { name: "AI for Environment", target: 20000, collected: 12000 },
+      4: { name: "AI for Social Good", target: 5000, collected: 3000 }
+    };
+
+    function updateProgressBar(id, target, collected) {
+      const progress = (collected / target) * 100;
+      document.getElementById(`progress-bar-${id}`).style.width = progress + '%';
+      document.getElementById(`progress-bar-${id}`).innerText = `$${collected}`;
+      document.getElementById(`target-amount-${id}`).textContent = target;
+      document.getElementById(`collected-amount-${id}`).textContent = collected;
+    }
+
+    // Update all progress bars
+    for (let id in fundraiserData) {
+      const data = fundraiserData[id];
+      updateProgressBar(id, data.target, data.collected);
+    }
+  </script>
+</body>
+</html>

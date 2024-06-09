@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seekers | Aid Bridge</title>
+  <link rel="stylesheet" href="seekers.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Aid-help.jpg" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpers.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="featured-requests">
+    <h2>Featured Requests</h2>
+    <div class="request-cards">
+      <!-- Example Request Card -->
+      <div class="card">
+        <img src="C:\Users\saket\OneDrive\career\hack3\seeker side\test\images\2ac68f7d148dbfc2ee3031fc734194f4.jpg" alt="Request Image">
+        <h3>Girl Child Education in Harayana</h3>
+        <p></p>
+        <a href="request-details.html">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="submit-request">
+    <h2>Submit Your Request</h2>
+    <form id="seeker-form">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <!-- New Bank Account Number Field -->
+      <input type="text" placeholder="Bank Account Number" required>
+      <select required>
+        <option value="">Type of Help Needed</option>
+        <option value="financial">Financial Assistance</option>
+        <option value="medical">Medical Support</option>
+        <option value="educational">Educational Aid</option>
+        <!-- Add more options as needed -->
+      </select>
+      <textarea placeholder="Detailed Description" required></textarea>
+      <input type="file" name="supporting-documents">
+      <label>
+        <input type="checkbox" required> I consent to participate in a video call to verify my seeking for aid.
+      </label>
+      <button type="submit">Submit Request</button>
+    </form>
+    <p>The details of when and how you'll be contacted will be informed to you via an email to the address you provided.</p>
+  </section>
+
+  <section class="testimonials">
+    <h2>Success Stories</h2>
+    <div class="testimonial-cards">
+      <!-- Example Testimonial Card -->
+      <div class="card">
+        <p>"Thanks to Aid Bridge, I was able to get the help I needed."</p>
+        <h4>- John Doe</h4>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('seeker-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = event.target.name.value;
+      window.location.href = `additional-questions.html?name=${encodeURIComponent(name)}`;
+    });
+  </script>
+</body>
+</html>

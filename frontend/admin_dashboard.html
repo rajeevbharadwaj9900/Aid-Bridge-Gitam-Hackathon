@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2e2f2e; /* Greenish-black background */
+            color: #d4d7d1; /* Light text color for contrast */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            background-color: #9acd32;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+        header .logo img {
+            height: 80px; /* Increased size */
+            margin-right: 20px;
+        }
+        header .logo h1 {
+            font-size: 2em; /* Larger font size */
+            margin: 0;
+        }
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #2e2f2e;
+            font-weight: 500;
+        }
+        h1 {
+            font-family: 'Abril Fatface', Arial; /* Stylish header font */
+            color: #9acd32; /* Yellowish-green text color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filters label {
+            margin-right: 10px;
+        }
+        .filters select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #9acd32;
+            background-color: #333;
+            color: #d4d7d1;
+        }
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #444; /* Darker background for table */
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 2px solid #9acd32; /* More prominent borders */
+        }
+        th {
+            background-color: #9acd32; /* Yellowish-green background for header */
+            color: #2e2f2e; /* Dark text color */
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #555; /* Slightly lighter row */
+        }
+        tbody tr:hover {
+            background-color: #666; /* Hover effect for rows */
+        }
+        .button {
+            padding: 8px 16px;
+            color: #2e2f2e; /* Dark text color */
+            background-color: #9acd32; /* Yellowish-green button background */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .button:hover {
+            background-color: #86b42b; /* Slightly darker on hover */
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background-color: #222; /* Dark footer background */
+            color: #9acd32;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\saket\OneDrive\career\hack3\Admin\aidbridge logo.jpg" alt="AidBridge Logo">
+            <h1>AidBridge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Seeker Verification Management</h1>
+    <div class="filters">
+        <label for="status-filter">Filter by status:</label>
+        <select id="status-filter" onchange="filterTable()">
+            <option value="all">All</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+    <table id="application-table">
+        <thead>
+            <tr>
+                <th>Event ID</th>
+                <th>Name of the Aid</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-status="Pending">
+                <td>1</td>
+                <td>Aid for Clean Water</td>
+                <td class="status">Pending</td>
+                <td><button class="button verify" onclick="redirectToGoodPage()">Verify</button></td>
+            </tr>
+            <tr data-status="Approved">
+                <td>2</td>
+                <td>Educational Support Aid</td>
+                <td class="status">Approved</td>
+                <td></td>
+            </tr>
+            <tr data-status="Pending">
+                <td>3</td>
+                <td>Food Donation Aid</td>
+                <td class="status">Pending</td>
+                <td><button class="button verify" onclick="redirectToVerifyPage(3)">Verify</button></td>
+            </tr>
+            <tr data-status="Completed">
+                <td>4</td>
+                <td>Mental Health Support Aid</td>
+                <td class="status">Completed</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="button save" onclick="saveChanges()">Save Changes</button>
+
+    <footer>
+        &copy; 2024 Event Management. All rights reserved.
+    </footer>
+
+    <script>
+        function redirectToGoodPage() {
+            window.location.href = "admin_verify_good.html";
+        }
+
+        function redirectToVerifyPage(eventId) {
+            window.location.href = `admin_verify.html?eventId=${eventId}`;
+        }
+
+        function filterTable() {
+            const filter = document.getElementById('status-filter').value;
+            const rows = document.querySelectorAll('#application-table tbody tr');
+            rows.forEach(row => {
+                if (filter === 'all') {
+                    row.style.display = '';
+                } else {
+                    if (row.getAttribute('data-status') === filter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function saveChanges() {
+            alert('Changes have been saved.');
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Check local storage for rejection status
+            const rejectedApplication = JSON.parse(localStorage.getItem('rejectedApplication'));
+
+            if (rejectedApplication) {
+                const table = document.getElementById('application-table');
+                const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+                for (let i = 0; i < rows.length; i++) {
+                    const aidNameCell = rows[i].getElementsByTagName('td')[1];
+                    if (aidNameCell.textContent.includes(rejectedApplication.name)) {
+                        table.getElementsByTagName('tbody')[0].removeChild(rows[i]);
+                    }
+                }
+                // Clear the rejectedApplication from local storage
+                localStorage.removeItem('rejectedApplication');
+            }
+        });
+    </script>
+</body>
+</html>

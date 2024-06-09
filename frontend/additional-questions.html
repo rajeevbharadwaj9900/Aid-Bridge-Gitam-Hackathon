@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Additional Questions | Aid Bridge</title>
+  <link rel="stylesheet" href="seekers.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Aid-help.jpg" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpers.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="additional-questions">
+    <h2>Additional Information</h2>
+    <form id="additional-questions-form">
+      <textarea placeholder="Describe the type of resources required" required></textarea>
+      <input type="number" name="numberOfPeople" placeholder="How many people/persons is this request for?" required>
+      <label for="emergency">Is this an emergency request?</label>
+      <select id="emergency" name="emergency" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <textarea placeholder="Provide any additional details or context that might be important" required></textarea>
+      <input type="date" placeholder="When do you need the resources by?" required>
+      <textarea placeholder="Describe any past efforts to obtain these resources and their outcomes" required></textarea>
+      <input type="number" name="target" placeholder="Estimated budget for the requested resources (if applicable)" required>
+      <input type="text" placeholder="Aadhar Card Number" required>
+      <input type="text" placeholder="PAN Card Number" required>
+      <label>
+        <input type="checkbox" required> Please check this box so we can contact you via video call.
+      </label>
+      <button type="submit">Submit</button>
+      <input type="hidden" name="name" id="name">
+    </form>
+    <p>The details of when and how you'll be contacted will be informed to you via an email to the address you provided.</p>
+  </section>
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name');
+      document.getElementById('name').value = name;
+
+      document.getElementById('additional-questions-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const target = form.target.value;
+        const numberOfPeople = form.numberOfPeople.value;
+        window.location.href = `fundraiser.html?name=${encodeURIComponent(name)}&target=${encodeURIComponent(target)}&numberOfPeople=${encodeURIComponent(numberOfPeople)}`;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Aid Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="admin_verify.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\saket\OneDrive\career\hack3\Admin\aidbridge logo.jpg" alt="AidBridge Logo">
+            <h1>AidBridge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Food Donation Aid Details</h1>
+        <div class="question">Describe the resources needed for food donations in the community:</div>
+        <div class="answer">For food donation initiatives in our community, we require non-perishable food items such as canned goods, rice, pasta, grains, and other essential food staples. Additionally, we need volunteers who can help collect, sort, and distribute the donated food items to individuals and families in need.</div>
+
+        <div class="question">Describe the statistics about food insecurity in our community:</div>
+        <div class="answer">In our community, approximately 20% of households experience food insecurity, meaning they lack reliable access to a sufficient quantity of affordable, nutritious food. This issue affects individuals of all ages, including children and seniors, and is exacerbated by factors such as unemployment, poverty, and limited access to grocery stores and fresh produce.</div>
+
+        <div class="images-container">
+            <div class="carousel">
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (1).jpeg" alt="Before Aid"></div>
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download (2).jpeg" alt="Before Aid"></div>
+                <div><img src="C:\Users\saket\OneDrive\career\hack3\Admin\download.jpeg" alt="Before Aid"></div>
+                <div><video controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video></div>
+            </div>
+        </div>
+
+        <div class="datetime-container">
+            <input type="date" class="datetime-input" id="meeting-date" required>
+            <input type="time" class="datetime-input" id="meeting-time" required>
+        </div>
+
+        <button class="button" onclick="sendEmail()">Send Email to Seeker</button>
+        <button class="button reject-button" onclick="rejectApplication()">Reject Application</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev">&lt;</button>',
+                nextArrow: '<button type="button" class="slick-next">&gt;</button>'
+            });
+        });
+
+        function sendEmail() {
+            const date = document.getElementById("meeting-date").value;
+            const time = document.getElementById("meeting-time").value;
+            const seekerEmail = "example@example.com"; // Assume seeker's email is known
+
+            const zoomLink = `https://zoom.us/meeting?id=123456789&date=${date}&time=${time}`;
+            alert(`Email sent to ${seekerEmail} with Zoom meeting link: ${zoomLink}`);
+        }
+
+        function rejectApplication() {
+            const aidName = "Food Donation Aid"; // Change this to dynamically get the aid name if needed
+            // Store the rejected aid name in local storage
+            localStorage.setItem('rejectedApplication', JSON.stringify({ name: aidName, status: 'rejected' }));
+            alert(`Application for ${aidName} has been rejected.`);
+            // Redirect back to admin dashboard
+            window.location.href = 'admin_dashboard.html';
+        }
+    </script>
+</body>
+</html>

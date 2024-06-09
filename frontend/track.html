@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Fund Progress</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2e2f2e, #1b1d1b);
+            color: #d4d7d1;
+        }
+
+        header {
+            width: 100%;
+            background-color: #9acd32;
+            color: #2e2f2e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+        header .logo img {
+            height: 80px; /* Increased size */
+            margin-right: 20px;
+            border: 2px solid black; /* Black border */
+        }
+        header .logo h1 {
+            font-size: 1.5em; /* Reduced font size */
+            margin: 0;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-left: 10px; /* Reduced margin for smaller navbar */
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #2e2f2e;
+            font-weight: 500;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .chart-container {
+            width: 70%;
+            margin: 20px auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .small-chart-container {
+            width: 50%;
+            margin: 0 auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+        }
+
+        .small-chart-container canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #1abc9c;
+            color: white;
+            text-align: center;
+            padding: 5px; /* Reduced padding */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Aid-help.jpg" alt="AidBridge Logo">
+            <h1>AidBridge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="chart-container">
+            <canvas id="fundsChart"></canvas>
+        </section>
+        <section class="small-chart-container">
+            <canvas id="progressPieChart"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Charity Organization. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('fundsChart').getContext('2d');
+            const progressPieCtx = document.getElementById('progressPieChart').getContext('2d');
+
+            const data = {
+                labels: ['COVID Relief', 'Environmental Action', 'Education for All', 'Health and Wellness', 'Community Support'],
+                datasets: [{
+                    label: 'Funds Collected ($)',
+                    data: [15000, 12000, 8000, 20000, 10000],
+                    backgroundColor: [
+                        'rgba(154, 205, 50, 0.8)',
+                        'rgba(52, 152, 219, 0.8)',
+                        'rgba(241, 196, 15, 0.8)',
+                        'rgba(231, 76, 60, 0.8)',
+                        'rgba(155, 89, 182, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(154, 205, 50, 1)',
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(231, 76, 60, 1)',
+                        'rgba(155, 89, 182, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            };
+
+            const options = {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#d4d7d1'
+                        },
+                        grid: {
+                            color: 'rgba(236, 240, 241, 0.2)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#d4d7d1'
+                        },
+                        grid: {
+                            color: 'rgba(236, 240, 241, 0.2)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#d4d7d1'
+                        }
+                    }
+                }
+            };
+
+            const fundsChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: options
+            });
+
+            const progressPieChart = new Chart(progressPieCtx, {
+                type: 'pie',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Funds Collected',
+                        data: data.datasets[0].data,
+                        backgroundColor: data.datasets[0].backgroundColor,
+                        borderColor: data.datasets[0].borderColor,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#d4d7d1'
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        });
+    </script>
+</body>
+</html>

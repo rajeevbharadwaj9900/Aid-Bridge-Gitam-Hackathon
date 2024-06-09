@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundraisers | Aid Bridge</title>
+  <link rel="stylesheet" href="seekers.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .fundraiser-list {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .fundraiser-item {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #67bc39;
+      border-radius: 5px;
+      background-color: #000000;
+      transition: transform 0.2s;
+    }
+    .fundraiser-item:hover {
+      transform: scale(1.02);
+    }
+    .fundraiser-link {
+      text-decoration: none;
+      color: #4caf50;
+      font-weight: bold;
+    }
+    .fundraiser-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="C:\Users\saket\OneDrive\career\hack3\seeker side\aidbridge logo.jpg" alt="Aid Bridge Logo">
+    </div>
+    <div class="quote">
+      <p><b>"The best way to find yourself is to lose yourself in the service of others."</b></p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="seekers.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="helpers.html">Helpers</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="fundraiser-list">
+    <h2>Aid you are seeking</h2>
+    <div id="fundraiser-items">
+      <!-- Fundraiser items will be injected here by JavaScript -->
+    </div>
+  </section>
+  <footer>
+    <div class="quick-links">
+      <a href="seekers.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <div class="contact-info">
+      <p>Address: 123 Aid Bridge St, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>Email: info@aidbridge.com</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name');
+      const target = params.get('target');
+      const numberOfPeople = params.get('numberOfPeople');
+
+      const fundraiserItemsContainer = document.getElementById('fundraiser-items');
+      const fundraiserItem = document.createElement('div');
+      fundraiserItem.classList.add('fundraiser-item');
+      fundraiserItem.innerHTML = `
+        <p>Fundraiser Name: ${name}</p>
+        <p>Amount Needed: ${target}</p>
+        <p>Number of People Needed: ${numberOfPeople}</p>
+        <a href="status.html?fundraiser=1" class="fundraiser-link">Check Status</a>
+      `;
+      fundraiserItemsContainer.appendChild(fundraiserItem);
+    });
+  </script>
+</body>
+</html>

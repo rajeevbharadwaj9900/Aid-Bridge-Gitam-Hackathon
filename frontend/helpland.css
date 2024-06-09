@@ -1,0 +1,221 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background-color: #000000; /* Black background for the body */
+    color: #fff; /* White text color */
+  }
+  
+  header {
+    background: #000000; /* Black background for header */
+    color: #8BC34A; /* Green text color for header */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header .logo img {
+    height: 100px; /* Increase the height to make the logo bigger */
+  }
+  
+  header .quote {
+    flex: 1;
+    text-align: right;
+    padding-right: 100px;
+    font-size: large;
+    font-style: italic;
+    color: #8BC34A; /* Green text color for the quote */
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: #8BC34A; /* Green text color for links in header */
+    text-decoration: none;
+  }
+  
+  .hero {
+    background: url('banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+  }
+  
+  section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #000000; /* Black background for sections */
+  }
+  
+  section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #8BC34A; /* Green text color */
+  }
+  
+  .featured-requests .request-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .featured-requests .card {
+    background: #333; /* Dark background for cards */
+    border: 1px solid #8BC34A; /* Green border for cards */
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    color: #fff; /* White text color for cards */
+  }
+  
+  .featured-requests .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .submit-request form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .submit-request form input,
+  .submit-request form select,
+  .submit-request form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #8BC34A; /* Green border for input fields */
+    border-radius: 5px;
+    background-color: #333; /* Dark background for input fields */
+    color: #fff; /* White text color for input fields */
+  }
+  
+  .submit-request form button {
+    padding: 10px;
+    background: #8BC34A; /* Green background for button */
+    color: #000; /* Black text color for button */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .submit-request form label {
+    margin-top: 20px;
+  }
+  
+  .testimonials .testimonial-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .testimonials .card {
+    background: #333; /* Dark background for testimonial cards */
+    border: 1px solid #8BC34A; /* Green border for testimonial cards */
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    color: #fff; /* White text color for testimonial cards */
+  }
+  
+  footer {
+    background: #333; /* Dark background for footer */
+    color: #8BC34A; /* Green text color for footer */
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer .quick-links,
+  footer .social-media,
+  footer .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  footer a {
+    color: #8BC34A;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer a img {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .fundraiser-list {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .fundraiser-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .fundraiser-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .fundraiser-card .card-body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .fundraiser-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .fundraiser-card .card-text {
+    font-size: 1rem;
+  }
+  
+  .donate-button {
+    background-color: #8BC34A;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .donate-button:hover {
+    background-color: #7BB229;
+  }
+  
+  .badge-custom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff6347;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
